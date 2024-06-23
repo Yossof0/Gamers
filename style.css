@@ -1,79 +1,174 @@
+/* Base Styles */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .form-container {
-    background-color: white;
+    max-width: 600px;
+    margin: 50px auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative;
+}
+
+.theme-button-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.theme-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+.theme-button:hover {
+    background-color: #0056b3;
+    transform: rotate(90deg);
+}
+
+.theme-icon {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.theme-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+    width: 150px;
+}
+
+.theme-dropdown.active {
+    display: block;
+}
+
+.theme-option {
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    text-align: left;
     width: 100%;
-    max-width: 400px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-option:hover {
+    background-color: #e0e0e0;
 }
 
 .title {
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
 }
 
-.form-container input[type="number"] {
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="number"],
+input[type="submit"] {
     padding: 10px;
-    width: calc(100% - 80px);
-    margin-right: 10px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 80%;
+    max-width: 300px;
 }
 
-.form-container input[type="submit"] {
-    padding: 10px 20px;
+input[type="submit"] {
     background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    color: #fff;
     cursor: pointer;
+    border: none;
 }
 
-.form-container input[type="submit"]:hover {
+input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.table-container {
+.result-container {
     margin-top: 20px;
-    width: 100%;
-    max-width: 400px;
-    max-height: 400px;
-    overflow-y: auto;
-    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.table-container table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-container th, .table-container td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.table-container th {
-    background-color: #007bff;
-    color: white;
-}
 .credits {
     text-align: center;
-    margin-top: 20px;
-    color: #666;
-    font-size: 14px;
+    margin-top: 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: gray;
+}
+
+/* Theme Styles */
+body.light {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+body.dark {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.neon {
+    background-color: #000000;
+    color: #00ff00;
+}
+
+body.ocean {
+    background-color: #0077be;
+    color: #e0ffff;
+}
+
+body.sky {
+    background-color: #87ceeb;
+    color: #ffffff;
+}
+
+body.cotton-candy {
+    background-color: #ffb6c1;
+    color: #ffffff;
+}
+
+body.cherry {
+    background-color: #ff4d4d;
+    color: #fff5ee;
+}
+
+body.black-white {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.purple {
+    background-color: #800080;
+    color: #ee82ee;
 }
